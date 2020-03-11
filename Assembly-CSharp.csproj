@@ -63,11 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\2D Platformer Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\2D Platformer Assets\Scripts\DamagePlayer.cs" />
-    <Compile Include="Assets\2D Platformer Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\2D Platformer Assets\Scripts\PlayerHealthController.cs" />
-    <Compile Include="Assets\2D Platformer Assets\Scripts\UIController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\CheckPoint\CheckPoint.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\CheckPoint\CheckPointController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\Player\DamagePlayer.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerFulDown.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerHealthController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\UI\UIController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\etc\LevelManager.cs" />
     <None Include="Assets\2D Platformer Assets\Graphics\Credits.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/UnityFX/2D Platformer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
