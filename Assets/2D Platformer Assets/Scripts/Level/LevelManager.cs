@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
 
     public float waitForRebirth;
 
+    public int GemCount;
+
     private void Awake()
     {
         instance = this;
@@ -16,6 +18,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        GemCount = 0;
     }
 
     // Update is called once per frame

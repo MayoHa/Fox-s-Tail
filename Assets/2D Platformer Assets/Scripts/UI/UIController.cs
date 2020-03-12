@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
 
     public Image heart1, heart2, heart3;
     public Sprite heart_Empty, heart_Half, heart_Full;
+    public Text GemCounter;
 
     private void Awake()
     {
@@ -86,5 +87,17 @@ public class UIController : MonoBehaviour
         heart1.sprite = heart_Full;
         heart2.sprite = heart_Full;
         heart3.sprite = heart_Full;
+    }
+
+    //Display the amount of Gems collected
+    public void GemsAmountDisplay()
+    {
+        GemCounter.text = LevelManager.instance.GemCount.ToString();
+    }
+
+    //Display the amount of Heart after collecting Cherrys
+    public void HeartsAmountDisplay()
+    {
+        HeartInteraction();
     }
 }

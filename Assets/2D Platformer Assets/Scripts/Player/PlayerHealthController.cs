@@ -61,6 +61,7 @@ public class PlayerHealthController : MonoBehaviour
         if (correntHealth <= 0)
         {
             correntHealth = 0;//to ensure it exceed 0
+            EffectController.instance.PlayerDeathEffect(transform);
             LevelManager.instance.PlayerRebirthCo();
             //StartCoroutine(PlayerRebirth());
             //PlayerRebirth();

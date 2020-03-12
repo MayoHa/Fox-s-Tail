@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - StompBox
   layers:
   - Default
   - TransparentFX
@@ -44,8 +46,20 @@ TagManager:
   - name: World
     uniqueID: 3959453725
     locked: 0
+  - name: CheckPoints
+    uniqueID: 4189966861
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effects
+    uniqueID: 853764655
+    locked: 0
+  - name: Collections
+    uniqueID: 2890361431
+    locked: 0
+  - name: Enemies
+    uniqueID: 4025476465
     locked: 0
   - name: Player
     uniqueID: 290545001
