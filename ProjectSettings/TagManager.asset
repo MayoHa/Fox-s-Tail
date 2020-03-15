@@ -46,11 +46,11 @@ TagManager:
   - name: World
     uniqueID: 3959453725
     locked: 0
-  - name: CheckPoints
-    uniqueID: 4189966861
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: CheckPoints
+    uniqueID: 4189966861
     locked: 0
   - name: Effects
     uniqueID: 853764655

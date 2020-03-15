@@ -53,6 +53,7 @@ public class PlayerHealthController : MonoBehaviour
         {
             correntHealth--;
             UIController.instance.HeartInteraction();
+            MusicController.instance.PlayAudio(9);
             isInvinvible = true;
             PlayerController.instance.isKnockBack = true;
             //ForceBack();

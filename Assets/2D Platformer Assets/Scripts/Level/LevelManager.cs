@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
         PlayerController.instance.gameObject.SetActive(false);
         yield return new WaitForSeconds(waitForRebirth);
         PlayerController.instance.gameObject.SetActive(true);
+
         /* to avoid player transform into hurt state when he respawns */
         PlayerController.instance.isKnockBack = false;
         PlayerHealthController.instance.isInvinvible = true;
@@ -45,5 +46,7 @@ public class LevelManager : MonoBehaviour
 
         PlayerHealthController.instance.correntHealth = PlayerHealthController.instance.maxHealth;
         UIController.instance.RefreshUI();
+        yield return new WaitForSeconds(Random.Range(1.2f, 2.5f));
+        MusicController.instance.musicEffects[0].Play();
     }
 }

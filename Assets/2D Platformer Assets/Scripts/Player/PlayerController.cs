@@ -64,12 +64,14 @@ public class PlayerController : MonoBehaviour
                 if (isGrounded)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                    MusicController.instance.PlayAudio(10);
                 }
                 else
                 {
                     if (canDoubleJump)
                     {
                         rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                        MusicController.instance.PlayAudio(10);
                         canDoubleJump = false;
                     }
                 }

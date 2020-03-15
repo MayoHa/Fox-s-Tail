@@ -72,12 +72,14 @@
     <Compile Include="Assets\2D Platformer Assets\Scripts\Enemy\EnemyController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Enemy\EnemyDeaath.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Level\LevelManager.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\MusicController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\DamagePlayer.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerFulDown.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerHealthController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\UI\UIController.cs" />
+    <Compile Include="Assets\Samples\Unity Recorder\2.1.0-preview.1\Screenshot Capture Sample\CaptureScreenShotExample.cs" />
     <None Include="Assets\2D Platformer Assets\Graphics\Credits.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/UnityFX/2D Platformer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -85,8 +87,14 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>E:/UnityFX/2D Platformer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>E:/UnityFX/2D Platformer/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/UnityFX/2D Platformer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>E:/UnityFX/2D Platformer/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>E:/UnityFX/2D Platformer/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>

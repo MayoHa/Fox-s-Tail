@@ -31,6 +31,8 @@ public class PlayerFulDown : MonoBehaviour
         {
             PlayerHealthController.instance.correntHealth = 0;
             UIController.instance.HeartInteraction();
+            MusicController.instance.musicEffects[0].Stop();
+            MusicController.instance.PlayAudio(11);
             LevelManager.instance.PlayerRebirthCo();
         }
     }

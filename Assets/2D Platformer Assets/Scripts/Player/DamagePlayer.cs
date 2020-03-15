@@ -21,4 +21,9 @@ public class DamagePlayer : MonoBehaviour
             PlayerHealthController.instance.DealDamage();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerHealthController.instance.DealDamage();
+    }
 }

@@ -41,6 +41,7 @@ public class PickUp : MonoBehaviour
             LevelManager.instance.GemCount++;
             UIController.instance.GemsAmountDisplay();
             EffectController.instance.CollectEffect(transform);
+            MusicController.instance.PlayAudio(6);
             Destroy(gameObject);
         }
 
@@ -51,6 +52,7 @@ public class PickUp : MonoBehaviour
                 PlayerHealthController.instance.correntHealth++;
                 UIController.instance.HeartsAmountDisplay();
                 EffectController.instance.CollectEffect(transform);
+                MusicController.instance.PlayAudio(7);
                 Destroy(gameObject);
             }
         }

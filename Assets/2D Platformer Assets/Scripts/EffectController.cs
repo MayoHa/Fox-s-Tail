@@ -30,5 +30,6 @@ public class EffectController : MonoBehaviour
     public void PlayerDeathEffect(Transform transform)
     {
         Instantiate(playerDeathEffect, transform.position, transform.rotation);
+        MusicController.instance.PlayAudio(8);
     }
 }
