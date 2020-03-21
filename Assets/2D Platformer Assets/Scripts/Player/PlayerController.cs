@@ -46,65 +46,69 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!isKnockBack)
+        if (!PauseController.instance.isPaused)
         {
-            //Move left and right
-            rb.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), rb.velocity.y);
-
-            isGrounded = Physics2D.OverlapCircle(checkIsGroundPoint.position, .2f, ground);
-
-            if (isGrounded)
+            //{
+            if (!isKnockBack)
             {
-                canDoubleJump = true;
-            }
+                //Move left and right
+                rb.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), rb.velocity.y);
 
-            //Jump
-            if (Input.GetButtonDown("Jump"))
-            {
+                isGrounded = Physics2D.OverlapCircle(checkIsGroundPoint.position, .2f, ground);
+
                 if (isGrounded)
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-                    MusicController.instance.PlayAudio(10);
+                    canDoubleJump = true;
                 }
-                else
+
+                //Jump
+                if (Input.GetButtonDown("Jump"))
                 {
-                    if (canDoubleJump)
+                    if (isGrounded)
                     {
                         rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
                         MusicController.instance.PlayAudio(10);
-                        canDoubleJump = false;
                     }
+                    else
+                    {
+                        if (canDoubleJump)
+                        {
+                            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                            MusicController.instance.PlayAudio(10);
+                            canDoubleJump = false;
+                        }
+                    }
+                }
+
+                //Flip
+                if (rb.velocity.x > 0)
+                {
+                    rd.flipX = false;
+                }
+                else if (rb.velocity.x < 0)
+                {
+                    rd.flipX = true;
+                }
+            }
+            else
+            {
+                ForceBack();
+                knockBackCounter -= Time.deltaTime;
+                if (knockBackCounter < 0)
+                {
+                    isKnockBack = false;
+                    knockBackCounter = knockBackLength;
                 }
             }
 
-            //Flip
-            if (rb.velocity.x > 0)
-            {
-                rd.flipX = false;
-            }
-            else if (rb.velocity.x < 0)
-            {
-                rd.flipX = true;
-            }
-        }
-        else
-        {
-            ForceBack();
-            knockBackCounter -= Time.deltaTime;
-            if (knockBackCounter < 0)
-            {
-                isKnockBack = false;
-                knockBackCounter = knockBackLength;
-            }
-        }
+            //Animation
+            anim.SetFloat("MoveSpeed", Mathf.Abs(rb.velocity.x));
+            anim.SetBool("IsGround", isGrounded);
+            anim.SetBool("IsHurt", isKnockBack);
 
-        //Animation
-        anim.SetFloat("MoveSpeed", Mathf.Abs(rb.velocity.x));
-        anim.SetBool("IsGround", isGrounded);
-        anim.SetBool("IsHurt", isKnockBack);
-
-        //FullDown
-        PlayerFulDown.instance.DealFullDownDied();
+            //FullDown
+            PlayerFulDown.instance.DealFullDownDied();
+        }
     }
 
     //take the player back when he is hurt

@@ -27,7 +27,7 @@ public class MusicController : MonoBehaviour
     public void PlayAudio(int value)
     {
         audioEffects[value].Stop();
-        audioEffects[value].pitch = Random.Range(.8f, 1.1f);
+        audioEffects[value].pitch = Random.Range(0.8f, 1.1f);
         audioEffects[value].Play();
     }
 

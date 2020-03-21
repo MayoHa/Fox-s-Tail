@@ -35,8 +35,14 @@ public class LevelManager : MonoBehaviour
     private IEnumerator PlayerRebirth()
     {
         PlayerController.instance.gameObject.SetActive(false);
-        yield return new WaitForSeconds(waitForRebirth);
+
+        yield return new WaitForSeconds(waitForRebirth - 1f / UIFadeOut.instance.fadeSpeed);
+        UIFadeOut.instance.FadeToBlack();
+
+        yield return new WaitForSeconds(1f / UIFadeOut.instance.fadeSpeed + 0.2f);
         PlayerController.instance.gameObject.SetActive(true);
+
+        UIFadeOut.instance.FadeToAlpha();
 
         /* to avoid player transform into hurt state when he respawns */
         PlayerController.instance.isKnockBack = false;

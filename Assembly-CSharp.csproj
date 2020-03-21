@@ -78,7 +78,10 @@
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerFulDown.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerHealthController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\UI\ButtonController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\UI\PauseController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\UI\UIController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\UI\UIFadeOut.cs" />
     <Compile Include="Assets\Samples\Unity Recorder\2.1.0-preview.1\Screenshot Capture Sample\CaptureScreenShotExample.cs" />
     <None Include="Assets\2D Platformer Assets\Graphics\Credits.txt" />
     <Reference Include="Unity.Timeline.Editor">
