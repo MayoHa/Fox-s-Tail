@@ -71,13 +71,15 @@
     <Compile Include="Assets\2D Platformer Assets\Scripts\EffectController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Enemy\EnemyController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Enemy\EnemyDeaath.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\Level\LevelEnd.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Level\LevelManager.cs" />
-    <Compile Include="Assets\2D Platformer Assets\Scripts\MusicController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\Music\MusicController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\DamagePlayer.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerFulDown.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\Player\PlayerHealthController.cs" />
+    <Compile Include="Assets\2D Platformer Assets\Scripts\StaticInfo.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\UI\ButtonController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\UI\PauseController.cs" />
     <Compile Include="Assets\2D Platformer Assets\Scripts\UI\UIController.cs" />

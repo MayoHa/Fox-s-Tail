@@ -92,7 +92,7 @@ public class UIController : MonoBehaviour
     //Display the amount of Gems collected
     public void GemsAmountDisplay()
     {
-        GemCounter.text = LevelManager.instance.GemCount.ToString();
+        GemCounter.text = StaticInfo.Gem.ToString();
     }
 
     //Display the amount of Heart after collecting Cherrys

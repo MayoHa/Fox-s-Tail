@@ -13,6 +13,7 @@ public class UIFadeOut : MonoBehaviour
     public float fadeSpeed;
 
     private bool fadeToBlack, fadeToAlpha;
+    private GameObject thisPanel;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class UIFadeOut : MonoBehaviour
         fadeToAlpha = true;
         fadeToBlack = false;
         StartCoroutine(SceneStart());
+        thisPanel = gameObject;
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class UIFadeOut : MonoBehaviour
             if (image.color.a == 0)
             {
                 fadeToAlpha = false;
+                thisPanel.SetActive(false);
             }
         }
     }

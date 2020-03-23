@@ -47,11 +47,14 @@ public class PlayerHealthController : MonoBehaviour
     }
 
     // deal Player's health
-    public void DealDamage()
+    public void DealDamage(int attack)
     {
         if (!isInvinvible)
         {
-            correntHealth--;
+            for (int i = 0; i < attack; i++)
+            {
+                correntHealth--;
+            }
             UIController.instance.HeartInteraction();
             MusicController.instance.PlayAudio(9);
             isInvinvible = true;
@@ -63,6 +66,7 @@ public class PlayerHealthController : MonoBehaviour
         {
             correntHealth = 0;//to ensure it exceed 0
             EffectController.instance.PlayerDeathEffect(transform);
+            MusicController.instance.musicEffects[0].Stop();
             LevelManager.instance.PlayerRebirthCo();
             //StartCoroutine(PlayerRebirth());
             //PlayerRebirth();

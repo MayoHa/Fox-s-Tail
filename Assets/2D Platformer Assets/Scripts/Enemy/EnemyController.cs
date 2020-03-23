@@ -60,6 +60,10 @@ public class EnemyController : MonoBehaviour
 
         //animation
         anim.SetBool("isMoving", rb.velocity.x != 0);
+        if (rb.velocity.x == 0)
+        {
+            //GetComponent<Rigidbody2D>().bodyType.CompareTo(2);
+        }
     }
 
     //Controll enemy move around

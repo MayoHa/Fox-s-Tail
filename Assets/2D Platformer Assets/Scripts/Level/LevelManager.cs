@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
 
     public float waitForRebirth;
 
+    public GameObject fadeOut;
+
     public int GemCount;
 
     private void Awake()
@@ -37,11 +39,12 @@ public class LevelManager : MonoBehaviour
         PlayerController.instance.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(waitForRebirth - 1f / UIFadeOut.instance.fadeSpeed);
+        fadeOut.SetActive(true);
         UIFadeOut.instance.FadeToBlack();
 
         yield return new WaitForSeconds(1f / UIFadeOut.instance.fadeSpeed + 0.2f);
         PlayerController.instance.gameObject.SetActive(true);
-
+        fadeOut.SetActive(true);
         UIFadeOut.instance.FadeToAlpha();
 
         /* to avoid player transform into hurt state when he respawns */

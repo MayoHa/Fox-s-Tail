@@ -17,8 +17,14 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
     public bool isKnockBack;
 
+    [HideInInspector]
+    public bool isInput;//判断是否接受输入
+
     [Tooltip("受伤回退在X、Y的力分量")]
     public float knockBackForceX, knockBackForceY;
+
+    [Tooltip("游戏结束时走路的速度")]
+    public float MoveOutSpeed;
 
     private bool isGrounded;
     private bool canDoubleJump;
@@ -39,6 +45,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rd = GetComponent<SpriteRenderer>();
+        isInput = true;
         isKnockBack = false;
         knockBackCounter = knockBackLength;
     }
@@ -46,15 +53,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!PauseController.instance.isPaused)
+        isGrounded = Physics2D.OverlapCircle(checkIsGroundPoint.position, .2f, ground);
+
+        if (!PauseController.instance.isPaused && isInput)
         {
             //{
             if (!isKnockBack)
             {
                 //Move left and right
                 rb.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), rb.velocity.y);
-
-                isGrounded = Physics2D.OverlapCircle(checkIsGroundPoint.position, .2f, ground);
 
                 if (isGrounded)
                 {
@@ -101,14 +108,13 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            //Animation
-            anim.SetFloat("MoveSpeed", Mathf.Abs(rb.velocity.x));
-            anim.SetBool("IsGround", isGrounded);
-            anim.SetBool("IsHurt", isKnockBack);
-
             //FullDown
             PlayerFulDown.instance.DealFullDownDied();
         }
+        //Animation
+        anim.SetFloat("MoveSpeed", Mathf.Abs(rb.velocity.x));
+        anim.SetBool("IsGround", isGrounded);
+        anim.SetBool("IsHurt", isKnockBack);
     }
 
     //take the player back when he is hurt
@@ -116,5 +122,11 @@ public class PlayerController : MonoBehaviour
     {
         if (knockBackCounter == knockBackLength)
             rb.velocity = forceBackAll * (-rb.velocity.normalized + new Vector2(knockBackForceX, knockBackForceY));
+    }
+
+    //When the level Completed ,the Player run along the road
+    public void LevelEndRun()
+    {
+        rb.velocity = new Vector2(MoveOutSpeed, rb.velocity.y);
     }
 }
