@@ -18,11 +18,21 @@ public class ButtonController : MonoBehaviour
     public void StartButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void HelperButton()
+    {
+        SceneManager.LoadScene("Helper");
+    }
+
+    public void ReturnButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }

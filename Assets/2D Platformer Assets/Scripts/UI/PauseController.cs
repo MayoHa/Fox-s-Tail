@@ -10,7 +10,10 @@ public class PauseController : MonoBehaviour
     [HideInInspector]
     public bool isPaused = false;
 
+    public GameObject fadeOutPanel;
     public GameObject pausePanel;
+
+    //private int keyCount;
 
     private void Awake()
     {
@@ -22,14 +25,22 @@ public class PauseController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        //keyCount = 1;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !fadeOutPanel.activeSelf && !isPaused)
         {
+            //keyCount++;
             Pause();
+            Debug.Log("getKey");
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        {
+            Resume();
+            Debug.Log("setKey");
         }
     }
 
@@ -40,15 +51,17 @@ public class PauseController : MonoBehaviour
         MusicController.instance.musicEffects[0].Pause();
         isPaused = true;
         pausePanel.SetActive(true);
+        //if (Input.GetKeyDown(KeyCode.Escape))
     }
 
     //Resume
     public void Resume()
     {
+        Time.timeScale = 1f;
+        //keyCount++;
         pausePanel.SetActive(false);
         MusicController.instance.musicEffects[0].Play();
         isPaused = false;
-        Time.timeScale = 1f;
     }
 
     //to the levelSelect Menu
@@ -58,6 +71,7 @@ public class PauseController : MonoBehaviour
 
     public void MainMenu()
     {
+        //keyCount++;
         SceneManager.LoadScene(0);
     }
 }

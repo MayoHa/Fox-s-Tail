@@ -25,6 +25,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        HeartInteraction();
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class UIController : MonoBehaviour
     // to make UI heart interactive with player
     public void HeartInteraction()
     {
-        switch (PlayerHealthController.instance.correntHealth)
+        switch (GameData.instance.playerHealthCount)
         {
             case 1:
                 heart1.sprite = heart_Half;
@@ -92,7 +93,7 @@ public class UIController : MonoBehaviour
     //Display the amount of Gems collected
     public void GemsAmountDisplay()
     {
-        GemCounter.text = StaticInfo.Gem.ToString();
+        GemCounter.text = GameData.instance.gemCount.ToString();
     }
 
     //Display the amount of Heart after collecting Cherrys

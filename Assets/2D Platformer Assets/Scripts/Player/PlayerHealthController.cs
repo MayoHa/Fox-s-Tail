@@ -24,7 +24,7 @@ public class PlayerHealthController : MonoBehaviour
 
     private void Start()
     {
-        correntHealth = maxHealth;
+        correntHealth = GameData.instance.playerHealthCount;
         colorAlpha = gameObject.GetComponent<SpriteRenderer>().color;
         rb = GetComponent<Rigidbody2D>();
         isInvinvible = false;
@@ -53,7 +53,7 @@ public class PlayerHealthController : MonoBehaviour
         {
             for (int i = 0; i < attack; i++)
             {
-                correntHealth--;
+                GameData.instance.playerHealthCount--;
             }
             UIController.instance.HeartInteraction();
             MusicController.instance.PlayAudio(9);
@@ -62,9 +62,9 @@ public class PlayerHealthController : MonoBehaviour
             //ForceBack();
         }
 
-        if (correntHealth <= 0)
+        if (GameData.instance.playerHealthCount <= 0)
         {
-            correntHealth = 0;//to ensure it exceed 0
+            GameData.instance.playerHealthCount = 0;//to ensure it exceed 0
             EffectController.instance.PlayerDeathEffect(transform);
             MusicController.instance.musicEffects[0].Stop();
             LevelManager.instance.PlayerRebirthCo();

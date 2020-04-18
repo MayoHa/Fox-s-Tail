@@ -38,7 +38,7 @@ public class PickUp : MonoBehaviour
     {
         if (isGem)
         {
-            LevelManager.instance.GemCount++;
+            GameData.instance.gemCount++;
             UIController.instance.GemsAmountDisplay();
             EffectController.instance.CollectEffect(transform);
             MusicController.instance.PlayAudio(6);
@@ -47,9 +47,9 @@ public class PickUp : MonoBehaviour
 
         if (isCherry)
         {
-            if (!(PlayerHealthController.instance.correntHealth == PlayerHealthController.instance.maxHealth))
+            if (!(GameData.instance.playerHealthCount == PlayerHealthController.instance.maxHealth))
             {
-                PlayerHealthController.instance.correntHealth++;
+                GameData.instance.playerHealthCount++;
                 UIController.instance.HeartsAmountDisplay();
                 EffectController.instance.CollectEffect(transform);
                 MusicController.instance.PlayAudio(7);

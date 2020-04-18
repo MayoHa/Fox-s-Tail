@@ -29,7 +29,7 @@ public class PlayerFulDown : MonoBehaviour
     {
         if (PlayerController.instance.transform.position.y < FullDownHeight)
         {
-            PlayerHealthController.instance.correntHealth = 0;
+            GameData.instance.playerHealthCount = 0;
             UIController.instance.HeartInteraction();
             MusicController.instance.musicEffects[0].Stop();
             MusicController.instance.PlayAudio(11);

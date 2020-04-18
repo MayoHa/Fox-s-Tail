@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class LevelManager : MonoBehaviour
 
     public int GemCount;
 
+    public GameObject dataObject;
+
     private void Awake()
     {
         instance = this;
+        if (!GameObject.Find("GameData") && !SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByBuildIndex(0)))
+            GameObject.Instantiate(dataObject);
     }
 
     // Start is called before the first frame update
@@ -53,7 +58,7 @@ public class LevelManager : MonoBehaviour
 
         PlayerController.instance.transform.position = CheckPointController.instance.correntCheckPointPos;
 
-        PlayerHealthController.instance.correntHealth = PlayerHealthController.instance.maxHealth;
+        GameData.instance.playerHealthCount = PlayerHealthController.instance.maxHealth;
         UIController.instance.RefreshUI();
         yield return new WaitForSeconds(Random.Range(1.2f, 2.5f));
         MusicController.instance.musicEffects[0].Play();
