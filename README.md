@@ -22,4 +22,4 @@
 
 
 游戏试玩版：
-[在 Markdown 里下载这个 docx](./Builds_1.3)
+[Fox's Tail 1.3](https://drive.google.com/file/d/12OguRPjd4I16WdvIy3KjSX03oEsZPHoT/view?usp=drive_link)
