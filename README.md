@@ -22,4 +22,4 @@
 
 
 游戏试玩版：
-[Uploading Fox‘s Tail_1.3.zip…]()
+[在 Markdown 里下载这个 docx](./Builds_1.3)
